@@ -33,6 +33,7 @@ import plugily.projects.minigamesbox.inventory.common.item.SimpleClickableItem;
 import plugily.projects.minigamesbox.inventory.normal.NormalFastInv;
 import plugily.projects.murdermystery.arena.role.Role;
 import plugily.projects.murdermystery.commands.arguments.ArgumentsRegistry;
+import plugily.projects.murdermystery.handlers.language.SetupLanguageHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,9 @@ public class RoleSelectorArgument implements Listener {
 
   public RoleSelectorArgument(ArgumentsRegistry registry) {
     registry.mapArgument("murdermystery", new LabeledCommandArgument("roleselector", "murdermystery.command.roleselector", CommandArgument.ExecutorType.PLAYER,
-      new LabelData("/mm roleselector", "/mm roleselector", "&7Select a role\n&6Permission: &7murdermystery.command.roleselector")) {
+      new LabelData(SetupLanguageHelper.getCommandArgumentCommand("RoleSelector"), 
+                   SetupLanguageHelper.getCommandArgumentCommand("RoleSelector"), 
+                   SetupLanguageHelper.getCommandArgumentDescription("RoleSelector"))) {
       @Override
       public void execute(CommandSender sender, String[] args) {
         Player player = (Player) sender;

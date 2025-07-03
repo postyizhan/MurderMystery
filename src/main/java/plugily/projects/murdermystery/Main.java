@@ -33,6 +33,7 @@ import plugily.projects.murdermystery.boot.PlaceholderInitializer;
 import plugily.projects.murdermystery.commands.arguments.ArgumentsRegistry;
 import plugily.projects.murdermystery.events.PluginEvents;
 import plugily.projects.murdermystery.handlers.CorpseHandler;
+import plugily.projects.murdermystery.handlers.language.SetupLanguageHelper;
 import plugily.projects.murdermystery.handlers.lastwords.LastWordsManager;
 import plugily.projects.murdermystery.handlers.setup.SetupCategoryManager;
 import plugily.projects.murdermystery.handlers.skins.sword.SwordSkinManager;
@@ -67,6 +68,7 @@ public class Main extends PluginMain {
     new PlaceholderInitializer(this);
     messageInitializer.registerMessages();
     new AdditionalValueInitializer(this);
+    SetupLanguageHelper.init(this);
     initializePluginClasses();
 
     if(getConfigPreferences().getOption("HIDE_NAMETAGS")) {
@@ -81,12 +83,19 @@ public class Main extends PluginMain {
         System.currentTimeMillis() - start);
   }
 
+  @Override
+  public void reloadConfig() {
+    super.reloadConfig();
+    SetupLanguageHelper.reload();
+  }
+
   public void initializePluginClasses() {
     addFileName("lastwords");
     addFileName("powerups");
     addFileName("skins");
     addFileName("special_blocks");
     addFileName("trails");
+    addFileName("setup_lang");
     Arena.init(this);
     ArenaUtils.init(this);
     new ArenaEvents(this);

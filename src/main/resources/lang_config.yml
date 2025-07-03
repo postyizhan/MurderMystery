@@ -1,0 +1,15 @@
+# MurderMystery Language Configuration
+# 
+# Available language files are in the 'langs' folder
+# Current supported languages:
+# - en (English)
+# - zh (Simplified Chinese)
+#
+# You can add your own language file by copying an existing one
+# and translating it to your language. Then add it to the list above.
+
+# The language file to use
+language: en
+
+# Whether to automatically download new language files from the internet
+auto-update-languages: true 

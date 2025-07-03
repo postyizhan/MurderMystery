@@ -34,6 +34,7 @@ import plugily.projects.minigamesbox.classic.utils.version.xseries.XMaterial;
 import plugily.projects.murdermystery.arena.Arena;
 import plugily.projects.murdermystery.arena.special.SpecialBlock;
 import plugily.projects.murdermystery.commands.arguments.ArgumentsRegistry;
+import plugily.projects.murdermystery.handlers.language.SetupLanguageHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +52,9 @@ public class SpecialBlockRemoverArgument {
         "murdermystery.admin.removeblock",
         CommandArgument.ExecutorType.PLAYER,
         new LabelData(
-          "/mma removeblock",
-          "/mma removeblock",
-          "&7Removes the special block you are looking at \n&6Permission: &7murdermystery.admin.removeblock")) {
+          SetupLanguageHelper.getCommandArgumentCommand("RemoveBlock"),
+          SetupLanguageHelper.getCommandArgumentCommand("RemoveBlock"),
+          SetupLanguageHelper.getCommandArgumentDescription("RemoveBlock"))) {
         @Override
         public void execute(CommandSender sender, String[] args) {
           // no need for check as argument is only for players
@@ -98,16 +99,13 @@ public class SpecialBlockRemoverArgument {
                   config.set("instances." + arena.getId() + path, specialBlocksType);
                   // save arena config after removing special block
                   ConfigUtils.saveConfig(registry.getPlugin(), config, "arenas");
-                  new MessageBuilder("&cRemoved special block at loc "
-                    + serializedLoc
-                    + " from arena "
-                    + arena.getId()).player(player).sendPlayer();
+                  new MessageBuilder(SetupLanguageHelper.getSpecialBlockRemoverRemovedMessage(serializedLoc, arena.getId())).player(player).sendPlayer();
                   return;
                 }
               }
             }
           }
-          new MessageBuilder("&cPlease target an special block to continue!").player(player).sendPlayer();
+          new MessageBuilder(SetupLanguageHelper.getSpecialBlockRemoverMessage("Target-Block")).player(player).sendPlayer();
         }
       });
   }

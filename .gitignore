@@ -3,3 +3,17 @@
 /minecraft/
 /target/
 /.idea/
+.github/building/.gradle/8.13/gc.properties
+.github/building/.gradle/8.13/checksums/checksums.lock
+.github/building/.gradle/8.13/checksums/md5-checksums.bin
+.github/building/.gradle/8.13/checksums/sha1-checksums.bin
+.github/building/.gradle/8.13/executionHistory/executionHistory.bin
+.github/building/.gradle/8.13/executionHistory/executionHistory.lock
+.github/building/.gradle/8.13/fileChanges/last-build.bin
+.github/building/.gradle/8.13/fileHashes/fileHashes.bin
+.github/building/.gradle/8.13/fileHashes/fileHashes.lock
+.github/building/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.github/building/.gradle/buildOutputCleanup/cache.properties
+.github/building/.gradle/buildOutputCleanup/outputFiles.bin
+.github/building/.gradle/vcs-1/gc.properties
+.github/building/build/reports/problems/problems-report.html

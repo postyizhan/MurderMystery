@@ -1,0 +1,54 @@
+# MurderMystery 设置菜单语言文件 - 简体中文 (zh)
+# 版本: 1.0
+
+# 设置菜单类别
+setup:
+  switch:
+    gold-visuals:
+      name: "金币视觉效果"
+      description: "启用金币视觉效果\n在金币位置上方生成粒子效果"
+  
+  specific:
+    gold-spawn-time:
+      name: "金币生成时间（秒）"
+      description: "应该生成多少金币？\n这意味着每隔...秒生成1个金币\n默认值：5\n每5秒生成1个金币"
+    player-per-murderer:
+      name: "每个杀手的玩家数"
+      description: "游戏中应该有多少杀手？这意味着\n每一定数量的玩家有一个杀手。默认：\n5个玩家对应1个杀手，这意味着如果我们有\n14个玩家，它将计算出2个杀手！\n如果你只想要一个杀手，请设置为1"
+    player-per-detective:
+      name: "每个侦探的玩家数"
+      description: "游戏中应该有多少侦探？这意味着\n每一定数量的玩家有一个侦探。默认：\n7个玩家对应1个侦探，这意味着如果我们有\n18个玩家，它将计算出2个侦探！\n如果你只想要一个侦探，请设置为1"
+    gold-spawn:
+      name: "金币生成点"
+      description: "在你站立的位置\n添加新的金币生成点。"
+    mystery-cauldron:
+      name: "神秘炼药锅"
+      description: "选择一个炼药锅并将其添加到游戏中\n每次使用将花费1个金币！\n在special_blocks.yml文件中\n配置炼药锅药水！"
+    confessional:
+      name: "忏悔台"
+      description: "选择一个附魔台并\n添加对开发者的赞美\n忏悔台，给开发者的礼物\n花费1个金币！\n在附魔台周围3个方块的半径内\n添加一些拉杆\n让用户可以在那里祈祷！\n你可以获得礼物\n或者被诅咒！"
+  
+  location:
+    player-spawn-points:
+      name: "玩家出生点"
+      description: "游戏开始时玩家将被随机传送到的位置"
+
+# 命令帮助
+commands:
+  roleselector:
+    usage: "/mm roleselector"
+    description: "选择一个角色\n权限: murdermystery.command.roleselector"
+  swordskins:
+    usage: "/mm skins sword <皮肤名>"
+    description: "更改杀手剑皮肤\n权限: murdermystery.skins.use"
+  rolepass:
+    usage: "/mma rolepass <add/set/remove> <角色> <数量> [玩家]"
+    description: "添加或移除角色通行证\n权限: murdermystery.admin.rolepass"
+  removeblock:
+    usage: "/mma removeblock"
+    description: "移除你正在看的特殊方块 \n权限: murdermystery.admin.removeblock"
+
+# 特殊方块移除器消息
+special-block:
+  removed: "已从竞技场 %arena% 移除位置在 %location% 的特殊方块"
+  target-block: "请瞄准一个特殊方块以继续！"

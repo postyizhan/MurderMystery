@@ -1,0 +1,54 @@
+# MurderMystery Setup Menu Language File - English (en)
+# Version: 1.0
+
+# Setup Menu Categories
+setup:
+  switch:
+    gold-visuals:
+      name: "Gold Visuals"
+      description: "Enables gold visuals to spawn\nsome particle effects above gold locations"
+  
+  specific:
+    gold-spawn-time:
+      name: "Gold Spawn Time (Seconds)"
+      description: "How much gold should be spawned? \nThat means 1 gold spawned every ... seconds\nDefault: 5\nEvery 5 seconds it will spawn 1 gold"
+    player-per-murderer:
+      name: "Player Per Murderer"
+      description: "How many murderer should be ingame? This means \none murderer for that amount of players. Default: \n5 players are 1 murderer, that means if we have \n14 Players it will calculate 2 murderer! \nSet it to 1 if you want only one murderer"
+    player-per-detective:
+      name: "Player Per Detective"
+      description: "How many detectives should be ingame? This means \none detective for that amount of players. Default: \n7 players are 1 detective, that means if we have \n18 Players it will calculate 2 detectives! \nSet it to 1 if you want only one detective"
+    gold-spawn:
+      name: "Gold Spawn"
+      description: "Add new gold spawn \non the place you're standing at."
+    mystery-cauldron:
+      name: "Mystery Cauldron"
+      description: "Target a cauldron and add it to the game\nit will cost 1 gold per potion!\nConfigure cauldron potions \nin special_blocks.yml file!"
+    confessional:
+      name: "Confessional"
+      description: "Target enchanting table and\nadd praise to the developer\nconfessional, gift for\nthe developer costs 1 gold!\nAdd some levers in radius\nof 3 blocks near the enchant table\nto allow users to pray there!\nYou can either get gifts\nor curses from prayer!"
+  
+  location:
+    player-spawn-points:
+      name: "Player Spawn Points"
+      description: "Location where players will be randomly teleported when the game starts"
+
+# Commands Help
+commands:
+  roleselector:
+    usage: "/mm roleselector"
+    description: "Select a role\nPermission: murdermystery.command.roleselector"
+  swordskins:
+    usage: "/mm skins sword <skin_name>"
+    description: "Change murderer sword skin\nPermission: murdermystery.skins.use"
+  rolepass:
+    usage: "/mma rolepass <add/set/remove> <role> <amount> [player]"
+    description: "Add or remove rolepass\nPermission: murdermystery.admin.rolepass"
+  removeblock:
+    usage: "/mma removeblock"
+    description: "Removes the special block you are looking at \nPermission: murdermystery.admin.removeblock"
+
+# Special Block Remover Messages
+special-block:
+  removed: "Removed special block at loc %location% from arena %arena%"
+  target-block: "Please target an special block to continue!"
